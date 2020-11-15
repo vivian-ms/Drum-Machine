@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DrumPads from './components/DrumPads';
+import Display from './components/Display';
 
 const sound_bank = [
   {
@@ -68,6 +69,7 @@ const App = () => {
   return (
     <div>
       <DrumPads sound_bank={sound_bank} soundPlayed={soundPlayed} />
+      <Display sound={sound} />
     </div>
   );
 };
