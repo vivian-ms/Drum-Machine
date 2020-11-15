@@ -1,4 +1,17 @@
+import { useEffect } from 'react';
+
 const DrumPads = ( {sound_bank, soundPlayed} ) => {
+  useEffect(() => {
+    window.addEventListener('keydown', evt => {
+      let key = evt.key.toUpperCase();
+
+      if (key === 'Q' || key === 'W' || key === 'E' || key === 'A' || key === 'S' || key === 'D' || key === 'Z' || key === 'X' || key === 'C') {
+        let button = document.querySelector(`[data-key=${key}]`);
+        button.click();
+      }
+    });  // End keydown event
+  }, []);  // End useEffect
+
   const clickHandler = evt => {
     soundPlayed(evt.target.dataset.name);
   }
