@@ -1,3 +1,5 @@
+import DrumPads from './components/DrumPads';
+
 const sound_bank = [
   {
     letter: 'Q',
@@ -58,7 +60,7 @@ const sound_bank = [
 const App = () => {
   return (
     <div>
-
+      <DrumPads sound_bank={sound_bank} />
     </div>
   );
 };
