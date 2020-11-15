@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import DrumPads from './components/DrumPads';
 
 const sound_bank = [
@@ -58,9 +59,15 @@ const sound_bank = [
 ];  // End sound_bank
 
 const App = () => {
+  const [sound, setSound] = useState('');
+
+  const soundPlayed = sound => {
+    setSound(sound);
+  }
+
   return (
     <div>
-      <DrumPads sound_bank={sound_bank} />
+      <DrumPads sound_bank={sound_bank} soundPlayed={soundPlayed} />
     </div>
   );
 };
