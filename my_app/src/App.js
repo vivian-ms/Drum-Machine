@@ -68,8 +68,10 @@ const App = () => {
 
   return (
     <div>
-      <DrumPads sound_bank={sound_bank} soundPlayed={soundPlayed} />
+      <h1>Drum Machine</h1>
       <Display sound={sound} />
+      <DrumPads sound_bank={sound_bank} soundPlayed={soundPlayed} />
+      <footer>Created for <a href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></footer>
     </div>
   );
 };
