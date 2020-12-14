@@ -14,6 +14,10 @@ const DrumPads = ( {sound_bank, soundPlayed} ) => {
 
   const clickHandler = evt => {
     soundPlayed(evt.target.dataset.name);
+
+    let audio = evt.target.children[0];
+    audio.play();
+    audio.currentTime = 0;
   }
 
   const pads = sound_bank.map((sound, i) => {
