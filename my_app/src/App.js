@@ -2,7 +2,8 @@ import { useState } from 'react';
 import DrumPads from './components/DrumPads';
 import Display from './components/Display';
 
-const soundbank = [
+
+const bank_1 = [
   {
     letter: 'Q',
     id: 'heater-1',
@@ -57,10 +58,69 @@ const soundbank = [
     name: 'Closed HH',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
   }
-];  // End soundbank
+];  // End bank_1
+
+const bank_2 = [
+  {
+    letter: 'Q',
+    id: 'chord-1',
+    name: 'Chord 1',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3'
+  },
+  {
+    letter: 'W',
+    id: 'chord-2',
+    name: 'Chord 2',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3'
+  },
+  {
+    letter: 'E',
+    id: 'chord-3',
+    name: 'Chord 3',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3'
+  },
+  {
+    letter: 'A',
+    id: 'shaker',
+    name: 'Shaker',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3'
+  },
+  {
+    letter: 'S',
+    id: 'open-hh',
+    name: 'Open HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3'
+  },
+  {
+    letter: 'D',
+    id: 'closed-hh',
+    name: 'Closed HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3'
+  },
+  {
+    letter: 'Z',
+    id: 'punchy-kick',
+    name: 'Punchy Kick',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3'
+  },
+  {
+    letter: 'X',
+    id: 'side-stick',
+    name: 'Side Stick',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3'
+  },
+  {
+    letter: 'C',
+    id: 'snare',
+    name: 'Snare',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3'
+  }
+];  // End bank_2
+
 
 const App = () => {
   const [sound, setSound] = useState('');
+  const [soundbank, setSoundbank] = useState(bank_1);
 
   const soundPlayed = sound => {
     setSound(sound);
