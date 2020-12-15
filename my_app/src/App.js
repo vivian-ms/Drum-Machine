@@ -2,7 +2,7 @@ import { useState } from 'react';
 import DrumPads from './components/DrumPads';
 import Display from './components/Display';
 
-const sound_bank = [
+const soundbank = [
   {
     letter: 'Q',
     id: 'heater-1',
@@ -57,7 +57,7 @@ const sound_bank = [
     name: 'Closed HH',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
   }
-];  // End sound_bank
+];  // End soundbank
 
 const App = () => {
   const [sound, setSound] = useState('');
@@ -67,11 +67,13 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1>Drum Machine</h1>
-      <Display sound={sound} />
-      <DrumPads sound_bank={sound_bank} soundPlayed={soundPlayed} />
-      <footer>Created for <a href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></footer>
+    <div className="container-fluid p-3 d-flex flex-column justify-content-between vh-100">
+      <h1 className="text-center">Drum Machine</h1>
+      <div id="drum-machine" className="rounded p-3 mx-auto">
+        <Display sound={sound} />
+        <DrumPads soundbank={soundbank} soundPlayed={soundPlayed} />
+      </div>
+      <footer className="small">Created by Vivian S for <a href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></footer>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const DrumPads = ( {sound_bank, soundPlayed} ) => {
+const DrumPads = ( {soundbank, soundPlayed} ) => {
   useEffect(() => {
     window.addEventListener('keydown', evt => {
       let key = evt.key.toUpperCase();
@@ -20,9 +20,9 @@ const DrumPads = ( {sound_bank, soundPlayed} ) => {
     audio.currentTime = 0;
   }
 
-  const pads = sound_bank.map((sound, i) => {
+  const pads = soundbank.map((sound, i) => {
     return (
-      <button key={i} id={sound.id} className="drum-pad" data-key={sound.letter} data-name={sound.name} onClick={clickHandler}>
+      <button key={i} id={sound.id} className="drum-pad btn btn-dark" data-key={sound.letter} data-name={sound.name} onClick={clickHandler}>
         <audio id={sound.letter} className="clip" src={sound.url}></audio>
         {sound.letter}
       </button>
