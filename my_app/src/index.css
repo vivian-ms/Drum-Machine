@@ -1,0 +1,43 @@
+body {
+  background: url('https://4.bp.blogspot.com/-DmdrR5vNuK0/T88r7WvgULI/AAAAAAAACOs/9nN4nKwevNM/s1600/music+notes+wallpaper+10.jpg');
+}
+
+h1 {
+  font-family: cursive;
+  font-size: 4rem;
+  font-variant: small-caps;
+  text-shadow: 5px 5px 10px black;
+}
+
+h1, footer {
+  color: white;
+}
+
+#drum-machine {
+  background: indigo;
+  box-shadow: 10px 10px 15px black;
+}
+
+#display {
+  background: lightgrey;
+  height: 5rem;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px 10px black;
+}
+
+#pads_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+#pads_container .drum-pad {
+  width: 80px;
+  height: 80px;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px 10px black;
+}
+
+#pads_container .drum-pad:hover {
+  box-shadow: none;
+}
