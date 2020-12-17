@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DrumPads from './components/DrumPads';
 import Display from './components/Display';
+import Toggle from './components/Toggle';
 
 
 const bank_1 = [
@@ -126,12 +127,18 @@ const App = () => {
     setSound(sound);
   }
 
+  const bankSelected = bank => {
+    bank === 'bank_1' ? setSoundbank(bank_1) : setSoundbank(bank_2);
+    setSound('');
+  };
+
   return (
     <div className="container-fluid p-3 d-flex flex-column justify-content-between vh-100">
       <h1 className="text-center">Drum Machine</h1>
       <div id="drum-machine" className="rounded p-3 mx-auto">
         <Display sound={sound} />
         <DrumPads soundbank={soundbank} soundPlayed={soundPlayed} />
+        <Toggle bankSelected={bankSelected} />
       </div>
       <footer className="small">Created by Vivian S for <a href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></footer>
     </div>
