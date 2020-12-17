@@ -41,3 +41,13 @@ h1, footer {
 #pads_container .drum-pad:hover {
   box-shadow: none;
 }
+
+.btn-group-toggle label {
+  font-variant: small-caps;
+  box-shadow: 5px 5px 15px black;
+  cursor: pointer;
+}
+
+.btn-group-toggle .active-label {
+  box-shadow: none;
+}
