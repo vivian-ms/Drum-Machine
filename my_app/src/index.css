@@ -9,7 +9,7 @@ h1 {
   text-shadow: 5px 5px 10px black;
 }
 
-h1, footer {
+h1, footer, #vol-container {
   color: white;
 }
 
@@ -44,7 +44,7 @@ h1, footer {
 
 .btn-group-toggle label {
   font-variant: small-caps;
-  box-shadow: 5px 5px 15px black;
+  box-shadow: 10px 10px 10px black;
   cursor: pointer;
 }
 
