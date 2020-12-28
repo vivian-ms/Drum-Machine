@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DrumPads from './components/DrumPads';
 import Display from './components/Display';
 import Toggle from './components/Toggle';
+import Volume from './components/Volume';
 
 
 const bank_1 = [
@@ -122,6 +123,7 @@ const bank_2 = [
 const App = () => {
   const [sound, setSound] = useState('');
   const [soundbank, setSoundbank] = useState(bank_1);
+  const [volume, setVolume] = useState('0.5');
 
   const soundPlayed = sound => {
     setSound(sound);
@@ -137,8 +139,9 @@ const App = () => {
       <h1 className="text-center">Drum Machine</h1>
       <div id="drum-machine" className="rounded p-3 mx-auto">
         <Display sound={sound} />
-        <DrumPads soundbank={soundbank} soundPlayed={soundPlayed} />
+        <DrumPads soundbank={soundbank} soundPlayed={soundPlayed} volume={volume} />
         <Toggle bankSelected={bankSelected} />
+        <Volume volume={volume} setVolume={setVolume} />
       </div>
       <footer className="small">Created by Vivian S for <a href="https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine" target="_blank" rel="noopener noreferrer">freeCodeCamp</a></footer>
     </div>
